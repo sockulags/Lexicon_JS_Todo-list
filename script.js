@@ -21,42 +21,50 @@ newTodoItem("Dricka kaffe");
 
 attachIconListeners();
 function attachIconListeners() {
-    document.querySelectorAll("span").forEach((icon) =>    
-    icon.addEventListener("click", (e) => {
-        console.log(icon)
-      const todoItem = e.target.closest(".todo-item");
-      switch (e.target.id) {
+    document.querySelectorAll("span").forEach((icon) => {
+        icon.removeEventListener("click", handleSpanClick);
+    });
+    document.querySelectorAll("span").forEach((icon) => {    
+        icon.addEventListener("click", handleSpanClick);
+    });
+
+    document.querySelectorAll("i").forEach((edit) => {
+        edit.removeEventListener("click", handleEditClick);
+    });
+    document.querySelectorAll("i").forEach((edit) => {
+        edit.addEventListener("click", handleEditClick);
+    });
+}
+
+function handleSpanClick(e) {
+    const todoItem = e.target.closest(".todo-item");
+    switch (e.target.id) {
         case "upArrow":
-          tryMoveUp(todoItem);
-          break;
+            tryMoveUp(todoItem);
+            break;
         case "downArrow":
-          tryMoveDown(todoItem);
-          break;
+            tryMoveDown(todoItem);
+            break;
         case "delete":
         case "done":
-          todoItem.remove();
-          break;
-      }
-    })
-  );
-  document.querySelectorAll("i").forEach((edit) =>
-  edit.addEventListener("click", (e) => {
-    console.log(e.target.nextElementSibling);
+            todoItem.remove();
+            break;
+    }
+}
+
+function handleEditClick(e) {
     const taskText = e.target.nextElementSibling;
     taskText.disabled = false;    
     taskText.addEventListener("input", (key) => {
-if(key.key === "Enter"){
-    taskText.blur();
-}else{
-    taskText.style.width = (taskText.value.length + 1) * 8 + "px";
-    if((taskText.value.length + 1) * 8 > 185){
-        taskText.style.width = "185px";
-        taskText.mul
-    }
-}
-    })
-  })
-);
+        if(key.key === "Enter") {
+            taskText.blur();
+        } else {
+            taskText.style.width = (taskText.value.length + 1) * 8 + "px";
+            if((taskText.value.length + 1) * 8 > 185){
+                taskText.style.width = "185px";
+            }
+        }
+    });
 }
 
 function tryMoveUp(element) {
