@@ -19,27 +19,17 @@
   <body>
     <div class="container">
       <h1>Todo list</h1>
+      <label for="author-select">Choose an author:</label>
+      <select id="author-select">
+        <option selected>-- Select one--</option>
+        <option>Lucas</option>
+        <option>Linda</option>
+      </select>
       <div class="input-btn">
         <input type="text" id="input-field" placeholder="Add task" />
         <button>+</button>
       </div>
-      <div class="todo-item">
-        <div class="task-info">
-          <p class="task">Text</p>
-          <p class="author">Author: <span class="date">Created: </span></p>
-          
-        </div>
-        <div class="icons">
-          <span class="material-symbols-outlined upArrow"> arrow_upward </span>
-          <span class="material-symbols-outlined downArrow">
-            arrow_downward
-          </span>
-          <span class="material-symbols-outlined delete"> delete </span>
-          <span class="material-symbols-outlined done">
-            assignment_turned_in
-          </span>
-        </div>
-      </div>
+
     </div>
     <script src="script.js" type="module"></script>
   </body>

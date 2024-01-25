@@ -1,26 +1,53 @@
-export const icons = {
-    delete: {
-        node: document.querySelector(".delete"),
-        html: `<span class="material-symbols-outlined delete">
-            delete
-        </span>`,
-    },
-    upArrow: {
-        node: document.querySelector(".upArrow"),
-        html: `<span class="material-symbols-outlined upArrow">
+export const icons = {  
+  upArrow: {
+    node: document.querySelector(".upArrow"),
+    html: `<span id="upArrow" class="material-symbols-outlined">
             arrow_upward
         </span>`,
-    },
-    downArrow: {
-        node: document.querySelector(".downArrow"),
-        html: `<span class="material-symbols-outlined downArrow">
+  },
+  downArrow: {
+    node: document.querySelector(".downArrow"),
+    html: `<span id="downArrow" class="material-symbols-outlined">
             arrow_downward
         </span>`,
-    },
-    done: {
-        node: document.querySelector(".done"),
-        html: `<span class="material-symbols-outlined done">
+  },
+  delete: {
+    node: document.querySelector(".delete"),
+    html: `<span id="delete" class="material-symbols-outlined">
+            delete
+        </span>`,
+  },
+  done: {
+    node: document.querySelector(".done"),
+    html: `<span id="done" class="material-symbols-outlined">
             assignment_turned_in
         </span>`,
-    },
+  },
+};
+
+export const selectors = {
+  created: {
+    element: "span",
+    className: "date",
+  },
+  author: {
+    element: "p",
+    className: "author",
+  },
+  task: {
+    element: "input",
+    className: "task",
+  },
+  textBox: {
+    element: "div",
+    className: "task-item",
+  },
+  icons: {
+    element: "div",
+    className: "icons",
+  },
+  todoCard: {
+    element: "div",
+    className: "todo-item",
+  },
 };

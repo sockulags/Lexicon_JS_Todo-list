@@ -129,16 +129,16 @@ transition: box-shadow 0.3s ease;
     top: 1px;
 }
 
-.delete:hover{
+#delete:hover{
     color:rgb(252, 82, 82);
 }
 
-.done:hover{
+#done:hover{
 color: rgb(82, 255, 47);
 }
 
-.upArrow:hover,
-.downArrow:hover{
+#upArrow:hover,
+#downArrow:hover{
     color: rgb(40, 169, 255);
 }
 .author{
@@ -153,4 +153,36 @@ color: rgb(82, 255, 47);
 
 .date{
     color: var(--dark-author-clr);
+}
+
+.task{
+    background-color: var(--dark-todo-clr); 
+    margin: 0;
+    width: fit-content;
+    height: auto;
+    border-radius: none;
+    padding-inline: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.task:focus{
+    background-color: var(--dark-todo-clr); 
+    pointer-events: none;
+    cursor: none;
+}
+
+.task[disabled]{
+    background-color: var(--dark-todo-clr); 
+    cursor:text;
+}
+.edit{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+i.material-symbols-outlined{
+    font-size: 14px;
+    
 }
