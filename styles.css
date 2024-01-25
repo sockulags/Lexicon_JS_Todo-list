@@ -1,0 +1,156 @@
+:root{
+    --dark-bg-clr:#161A1D;
+    --bg-clr:#F7F8F9;
+    --dark-input-clr:#22272B;
+    --input-clr: #F1F2F4;
+    --dark-clr: #F7F8F9;
+    --clr: #172B4D;
+    --dark-todo-clr: #454F59;
+    --todo-clr: #DCDFE4;
+    --dark-container-clr: rgba(89,103,115, 0.4);
+    --container-clr:rgba(133,144,162, 0.4);
+    --dark-author-clr: #C7D1DB;
+    --author-clr: #44546F;
+}
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--dark-clr)
+}
+
+h1{
+    font-weight: 500;
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+body{
+    display: flex;
+    background-color: var(--dark-bg-clr);
+}
+
+.container{
+    margin: 50px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;   
+    background-color: var( --dark-container-clr); 
+    border-radius: 10px;  
+}
+
+
+
+.input-btn{
+    display: flex;
+    justify-content: center;
+
+}
+
+button{   
+    height: 40px;
+    width: 50px;
+    background-color: var(--dark-bg-clr);
+    margin-left: 0;
+    border: none;
+    border-radius: 0 5px 5px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:hover{
+    font-size: 24px;
+    background-color: #282E33;
+}
+
+button:active{
+    background-color: var(--dark-todo-clr);
+    font-size: 18px;
+}
+
+input{ 
+height: 40px;
+width: 200px;
+border: none;
+border-radius: 5px 0 0 5px;
+background-color: var(--dark-input-clr);
+margin-right:0;
+padding-inline: 10px;
+}
+
+input:focus{
+outline: none;
+background-color: #1D2125;
+color: #fff;
+}
+
+input::placeholder {
+    color: var(--todo-clr);
+  }
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+.todo-item{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;    
+flex-wrap: wrap;
+background-color: var(--dark-todo-clr);
+padding: 10px;
+border-radius: 10px;
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); 
+transition: box-shadow 0.3s ease; 
+}
+.todo-item:hover {
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);    
+}
+
+.icons{
+  justify-items: end;
+    
+}
+.material-symbols-outlined{
+    font-size: 20px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.material-symbols-outlined:active { 
+    transform: scale(1.4);
+    position: relative;
+    top: 1px;
+}
+
+.delete:hover{
+    color:rgb(252, 82, 82);
+}
+
+.done:hover{
+color: rgb(82, 255, 47);
+}
+
+.upArrow:hover,
+.downArrow:hover{
+    color: rgb(40, 169, 255);
+}
+.author{
+    position: relative;
+    top:5px;
+    width: 100%;
+    font-size: 10px;
+    color: var(--dark-author-clr);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.date{
+    color: var(--dark-author-clr);
+}

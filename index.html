@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo-list</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo list</h1>
+      <div class="input-btn">
+        <input type="text" id="input-field" placeholder="Add task" />
+        <button>+</button>
+      </div>
+      <div class="todo-item">
+        <div class="task-info">
+          <p class="task">Text</p>
+          <p class="author">Author: <span class="date">Created: </span></p>
+          
+        </div>
+        <div class="icons">
+          <span class="material-symbols-outlined upArrow"> arrow_upward </span>
+          <span class="material-symbols-outlined downArrow">
+            arrow_downward
+          </span>
+          <span class="material-symbols-outlined delete"> delete </span>
+          <span class="material-symbols-outlined done">
+            assignment_turned_in
+          </span>
+        </div>
+      </div>
+    </div>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
