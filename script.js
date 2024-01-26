@@ -1,6 +1,6 @@
 import { icons, selectors } from "./constants.js";
 
-const addNew = document.querySelector("button");
+const addNew = document.querySelector("#addTask");
 const input = document.querySelector("input");
 const container = document.querySelector(".container");
 const todoCards = [];
@@ -37,6 +37,19 @@ function attachIconListeners() {
   });
 }
 
+var toggleButton = document.getElementById("toggleSelect");
+var selectList = document.getElementById("author-select");
+
+toggleButton.addEventListener("click", function(e) {
+console.log(e)
+  var event = new MouseEvent('mousedown', {
+      'view': window,
+      'bubbles': true,
+      'cancelable': true
+  });
+  console.log(event)
+  selectList.dispatchEvent(event);
+});
 function handleSpanClick(e) {
   const todoItem = e.target.closest(".todo-item");
   switch (e.target.id) {
@@ -108,6 +121,7 @@ function newTodoItem(text) {
   todoCards.push(todoTask);
 
   container.appendChild(taskDiv);
+  attachIconListeners();
 }
 
 function todoCard(inputelement, author, date) {

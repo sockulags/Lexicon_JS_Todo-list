@@ -186,3 +186,59 @@ i.material-symbols-outlined{
     font-size: 14px;
     
 }
+
+/* Select element */
+#author-select {
+    height: 40px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dark-input-clr);
+    color: var(--todo-clr);
+    margin-right: 0;
+    padding-inline: 10px;
+    margin: 20px auto; 
+    font-size: 16px;
+    font-weight: 500;
+    appearance: none;
+    background-image: url('/img/btn.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right -3px center;
+    cursor: pointer;
+}
+
+#author-select::after {
+    content: "\25BC"; /* Unicode for down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: var(--todo-clr);
+    pointer-events: none;
+
+}
+
+#author-select:hover{
+    background-image: url('/img/btn-hover.png');
+}
+
+#author-select option {
+    background-color: var(--dark-input-clr);
+    color: var(--todo-clr);
+}
+
+#author-select:focus {
+    outline: none;
+    background-color: #1D2125;
+    color: #fff;
+}
+
+#author-select option:first-child {
+    color: var(--todo-clr);
+}
+
+#toggleSelect{
+    position: relative;
+    left: -40px;
+}
