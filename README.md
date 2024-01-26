@@ -3,6 +3,7 @@
 ### Overview
 
 This project is a simple todo list created using vanilla JavaScript. The goal is to focus on DOM manipulation to implement core functionalities without relying on fancy features or animations. Below, you'll find a set of user stories that guide the development process.
+#### [Test it here](https://sockulags.github.io/Lexicon_JS_Todo-list/)
 
 ### User Stories
 
@@ -39,5 +40,3 @@ These stories provide additional challenges for those seeking to enhance the pro
 
 10. **Sort Todos by Timestamp or Author:**
     - As a user, I want to sort my todos based on either timestamp or author, providing flexibility in organizing my tasks.
-
-Feel free to contribute, suggest improvements, or tackle the bonus user stories for an added challenge! Happy coding!
