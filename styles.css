@@ -96,7 +96,7 @@ input:focus::placeholder {
   }
 
 .todo-item{
-    margin-top: 20px;
+    margin-top: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -241,4 +241,54 @@ i.material-symbols-outlined{
 #toggleSelect{
     position: relative;
     left: -40px;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;    
+}
+
+.custom-checkbox input[type="checkbox"] {   
+    appearance: none;   
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--dark-input-clr); 
+    border-radius: 3px;
+    background-color: var(--dark-bg-clr); 
+    cursor: pointer;
+    margin-right: 10px; 
+    position: relative; /
+}
+
+.custom-checkbox label{
+    font-size: 14px;
+}
+
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: var(--dark-todo-clr); 
+    border-color: var(--dark-todo-clr); 
+}
+
+.custom-checkbox input[type="checkbox"]:checked::before {
+    content: "\2713"; 
+    font-size: 16px;
+    color: var(--dark-clr); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sort{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+h2.sort-header{
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
 }

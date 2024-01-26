@@ -20,7 +20,7 @@
     <div class="container">
       <h1>Todo list</h1>     
         <select id="author-select">
-          <option selected>-- Select one--</option>
+          <option selected>-- Choose author --</option>
           <option>Lucas</option>
           <option>Linda</option>
         </select>       
@@ -30,6 +30,18 @@
         <button id="addTask">+</button>
       </div>
 
+     <h2 class="sort-header">Sort by:</h2>
+      <div class="sort">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="lastAddedCheckbox">
+          <label for="lastAddedCheckbox">Last Added</label>
+      </div>      
+      <div class="custom-checkbox">
+          <input type="checkbox" id="authorNameCheckbox">
+          <label for="authorNameCheckbox">Author Name</label>
+      </div>
+
+      </div>
     </div>
     <script src="script.js" type="module"></script>
   </body>
