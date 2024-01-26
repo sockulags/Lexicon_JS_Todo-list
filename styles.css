@@ -292,3 +292,7 @@ h2.sort-header{
     font-weight: 500;
     margin-top: 15px;
 }
+
+.completed-task {
+    text-decoration: line-through;
+}

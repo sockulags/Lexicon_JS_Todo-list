@@ -24,30 +24,3 @@ export const icons = {
         </span>`,
   },
 };
-
-export const selectors = {
-  created: {
-    element: "span",
-    className: "date",
-  },
-  author: {
-    element: "p",
-    className: "author",
-  },
-  task: {
-    element: "input",
-    className: "task",
-  },
-  textBox: {
-    element: "div",
-    className: "task-item",
-  },
-  icons: {
-    element: "div",
-    className: "icons",
-  },
-  todoCard: {
-    element: "div",
-    className: "todo-item",
-  },
-};
