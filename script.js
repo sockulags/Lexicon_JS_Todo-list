@@ -4,6 +4,14 @@ const addNew = document.querySelector("#addTask");
 const input = document.querySelector("input");
 const container = document.querySelector(".container");
 const todoCards = [];
+
+const authorCheckbox = document.querySelector("#authorNameCheckbox");
+const dateCheckbox = document.querySelector("#lastAddedCheckbox");
+
+
+authorCheckbox.addEventListener('change', handleCheckboxChange);
+dateCheckbox.addEventListener('change', handleCheckboxChange);
+
 let currentAuthor;
 addNew.addEventListener("click", () => {
   currentAuthor = document.querySelector("option:checked");
@@ -16,11 +24,64 @@ addNew.addEventListener("click", () => {
   }
 });
 
-newTodoItem("Plocka äpplen");
-newTodoItem("Lunch");
-newTodoItem("Dricka kaffe");
+
+function sortByFirstAdded(a, b) {
+  return new Date(a.date) - new Date(b.date);
+
+}
+function sortByLastAdded(a,b){
+  return new Date(b.date) - new Date(a.date);
+}
+
+function sortByAuthorAscending(a, b) {
+  return a.author.localeCompare(b.author);
+}
+
+function sortByAuthorDescending(a, b) {
+  return b.author.localeCompare(a.author);
+}
+
+
+
+
+
+setTimeout(function() {
+  newTodoItem("Plocka äpplen");
+  setTimeout(function() {
+      newTodoItem("Lunch");
+      setTimeout(function() {
+          newTodoItem("Dricka kaffe");
+      }, 1000); // Execute after 1 second
+  }, 1000); // Execute after 1 second
+}, 1000); // Execute after 1 second
 
 attachIconListeners();
+
+
+function handleCheckboxChange(event) {
+  if (event.target.checked && event.target === dateCheckbox) { 
+    todoCards.sort(sortByFirstAdded);   
+    todoCards.forEach(function(todoTask) {
+      container.appendChild(todoTask.card);
+  });    
+  } else if(event.target === dateCheckbox){
+    todoCards.sort(sortByLastAdded);
+    todoCards.forEach(function(todoTask) {
+      container.appendChild(todoTask.card);
+    });
+  }
+  else if (event.target.checked && event.target === authorCheckbox) { 
+    todoCards.sort(sortByAuthorAscending);    
+    todoCards.forEach(function(todoTask) {
+      container.appendChild(todoTask.card);
+  });    
+  } else if(event.target === authorCheckbox){
+    todoCards.sort(sortByAuthorDescending);
+    todoCards.forEach(function(todoTask) {
+      container.appendChild(todoTask.card);
+    });
+}
+}
 function attachIconListeners() {
   document.querySelectorAll("span").forEach((icon) => {
     icon.removeEventListener("click", handleSpanClick);
@@ -37,19 +98,6 @@ function attachIconListeners() {
   });
 }
 
-var toggleButton = document.getElementById("toggleSelect");
-var selectList = document.getElementById("author-select");
-
-toggleButton.addEventListener("click", function(e) {
-console.log(e)
-  var event = new MouseEvent('mousedown', {
-      'view': window,
-      'bubbles': true,
-      'cancelable': true
-  });
-  console.log(event)
-  selectList.dispatchEvent(event);
-});
 function handleSpanClick(e) {
   const todoItem = e.target.closest(".todo-item");
   switch (e.target.id) {
@@ -119,7 +167,6 @@ function newTodoItem(text) {
     date: currDate,
   };
   todoCards.push(todoTask);
-
   container.appendChild(taskDiv);
   attachIconListeners();
 }
